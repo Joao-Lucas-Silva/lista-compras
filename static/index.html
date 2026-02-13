@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Compras Online</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Lista de Compras Online</h1>
+    </header>
+
+    <main>
+        <!-- Tela de listas -->
+        <section id="tela-listas">
+            <h2>Minhas Listas</h2>
+            <div id="listas"></div>
+
+            <div class="novo-container">
+                <input type="text" id="nomeLista" placeholder="Nova lista">
+                <button onclick="criarLista()" class="btn-criar"><i class="fa fa-plus"></i> Criar</button>
+            </div>
+        </section>
+
+        <!-- Tela de itens -->
+        <section id="tela-itens" style="display:none;">
+            <button onclick="voltarParaListas()" class="btn-voltar"><i class="fa fa-arrow-left"></i> Voltar</button>
+            <h2>Itens da Lista</h2>
+            <h3 id="listaSelecionada">Nenhuma lista selecionada</h3>
+            <ul id="itens"></ul>
+
+            <div class="novo-container">
+                <input type="text" id="descricaoItem" placeholder="Descrição">
+                <input type="text" id="detalhesItem" placeholder="Detalhes">
+                <select id="categoriaItem">
+                    <option value="">Categoria</option>
+                    <option value="horti-fruti">Horti-fruti</option>
+                    <option value="frios">Frios</option>
+                    <option value="laticinios">Laticínios</option>
+                    <option value="bebidas">Bebidas</option>
+                    <option value="outros">Outros</option>
+                </select>
+                <button onclick="adicionarItem()" class="btn-criar"><i class="fa fa-plus"></i> Adicionar</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Loading overlay -->
+    <div id="loading" class="hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

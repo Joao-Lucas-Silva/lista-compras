@@ -1,0 +1,121 @@
+/* RESET & BODY */
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:#f5f6fa; color:#333; padding:0 15px; position: relative; }
+
+/* HEADER */
+header {
+    position: sticky;
+    top:0;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    color:white;
+    text-align:center;
+    padding:20px;
+    box-shadow:0 4px 6px rgba(0,0,0,0.1);
+    z-index:100;
+}
+
+/* MAIN */
+main { margin-top:20px; }
+
+/* BUTTONS */
+button {
+    cursor:pointer;
+    border:none;
+    border-radius:8px;
+    padding:6px 12px;
+    transition:0.2s;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.btn-criar { background:#2ecc71; color:white; font-weight:bold; }
+.btn-criar:hover { background:#27ae60; }
+
+.btn-del { background:#e74c3c; color:white; }
+.btn-del:hover { background:#c0392b; }
+
+.btn-voltar { background:#3498db; color:white; margin-bottom:10px; }
+.btn-voltar:hover { background:#2980b9; }
+
+/* INPUTS & SELECTS */
+input, select {
+    padding:8px 12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    margin-right:5px;
+    font-size:14px;
+}
+
+/* CARDS DE LISTA */
+.lista-card {
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    padding:12px;
+    border-radius:12px;
+    margin-bottom:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:all 0.3s;
+    cursor:pointer;
+}
+
+.lista-card:hover { transform:translateY(-2px); box-shadow:0 6px 15px rgba(0,0,0,0.2); }
+
+.lista-card button { margin-left:5px; flex-shrink:0; }
+
+/* UL ITENS */
+#itens { list-style:none; margin-top:10px; padding:0; }
+#itens li {
+    background:white;
+    margin-bottom:8px;
+    padding:10px;
+    border-radius:10px;
+    display:flex;
+    gap:6px;
+    align-items:center;
+    transition:all 0.2s;
+}
+
+#itens li:hover { background:#f0f8ff; }
+
+#itens li input, #itens li select { flex:1; padding:6px; }
+
+/* CORES POR CATEGORIA */
+.categoria-horti-fruti { border-left:5px solid #2ecc71; }
+.categoria-frios { border-left:5px solid #3498db; }
+.categoria-laticinios { border-left:5px solid #f1c40f; }
+.categoria-bebidas { border-left:5px solid #9b59b6; }
+.categoria-outros { border-left:5px solid #95a5a6; }
+
+/* RESPONSIVO */
+@media(max-width:768px){
+    .lista-card { flex-direction:column; align-items:flex-start; }
+    input, select, button { width:100%; margin-bottom:5px; }
+}
+
+/* CONTAINER NOVO ITEM / LISTA */
+.novo-container { display:flex; flex-wrap:wrap; gap:5px; margin-top:10px; }
+
+/* LOADING */
+#loading {
+    position:fixed; top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+#loading.hidden { display:none; }
+
+.spinner {
+    border:6px solid #f3f3f3;
+    border-top:6px solid #3498db;
+    border-radius:50%;
+    width:50px; height:50px;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin { 0%{transform:rotate(0deg);}100%{transform:rotate(360deg);} }
